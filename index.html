@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inner Weather | Emotional Weather Station</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="hero">
+        <p class="eyebrow">YOUR PERSONAL MOOD SPACE</p>
+        <h1>INNER WEATHER <span>☁️</span></h1>
+        <p class="tagline">Your feelings have a forecast.</p>
+        <p class="intro">Every feeling deserves a little space. What does your inner sky look like today?</p>
+    </header>
+
+    <main>
+        <section class="mood-section" aria-labelledby="mood-heading">
+            <h2 id="mood-heading">How are you feeling?</h2>
+            <p class="section-description">Choose the weather that matches your mood.</p>
+
+            <fieldset class="mood-grid">
+                <legend class="visually-hidden">Choose your mood</legend>
+                <label class="mood-card sunny" for="sunny">
+                    <input type="radio" id="sunny" name="mood" value="sunny">
+                    <span class="weather-icon" aria-hidden="true">☀️</span>
+                    <span class="mood-name">Sunny</span>
+                    <span class="mood-description">Happy and energetic</span>
+                </label>
+                <label class="mood-card rainy" for="rainy">
+                    <input type="radio" id="rainy" name="mood" value="rainy">
+                    <span class="weather-icon" aria-hidden="true">🌧️</span>
+                    <span class="mood-name">Rainy</span>
+                    <span class="mood-description">Sad or reflective</span>
+                </label>
+                <label class="mood-card cloudy" for="cloudy">
+                    <input type="radio" id="cloudy" name="mood" value="cloudy">
+                    <span class="weather-icon" aria-hidden="true">☁️</span>
+                    <span class="mood-name">Cloudy</span>
+                    <span class="mood-description">Unsure or low on energy</span>
+                </label>
+                <label class="mood-card stormy" for="stormy">
+                    <input type="radio" id="stormy" name="mood" value="stormy">
+                    <span class="weather-icon" aria-hidden="true">⛈️</span>
+                    <span class="mood-name">Stormy</span>
+                    <span class="mood-description">Stressed or overwhelmed</span>
+                </label>
+            </fieldset>
+        </section>
+
+        <section class="forecast-section" aria-labelledby="forecast-title" aria-live="polite" aria-atomic="true">
+            <p class="forecast-label">YOUR CURRENT FORECAST</p>
+            <p class="forecast-icon" id="forecast-icon" aria-hidden="true">🌤️</p>
+            <h2 id="forecast-title">Your sky is waiting</h2>
+            <p id="forecast-message">Select a mood above to discover your personal forecast.</p>
+            <article class="activity-card">
+                <h3>A little suggestion</h3>
+                <p id="forecast-activity">Take a moment to check in with yourself.</p>
+            </article>
+            <p class="feedback" id="feedback" role="status">Your personal weather report will appear here.</p>
+        </section>
+
+        <section class="theme-section">
+            <label class="theme-control" for="night-mode">
+                <input type="checkbox" id="night-mode">
+                <span class="theme-symbol" aria-hidden="true">🌙</span>
+                <span>Switch to night mode</span>
+            </label>
+            <p class="theme-hint">A little change of atmosphere.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Remember: the weather changes, and so can feelings. 💜</p>
+        <p class="footer-small">Made with care · INNER WEATHER</p>
+    </footer>
+</body>
+</html>

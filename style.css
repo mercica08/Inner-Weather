@@ -1,0 +1,326 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #f7f4ff;
+    --surface: #ffffff;
+    --text: #302b45;
+    --muted: #777188;
+    --accent: #8b76c9;
+    --border: #e9e2f5;
+    --shadow: 0 10px 30px rgba(77, 57, 112, 0.08);
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.hero {
+    padding: 65px 20px 50px;
+    text-align: center;
+    background: linear-gradient(135deg, #e9e1ff, #e2f2ff, #fff0f4);
+}
+
+.eyebrow {
+    color: #7865aa;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+h1 {
+    margin: 12px 0;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    letter-spacing: 2px;
+}
+
+h1 span {
+    font-size: 0.8em;
+}
+
+.tagline {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #6e5d98;
+}
+
+.intro {
+    max-width: 440px;
+    margin: 18px auto 0;
+    color: #655e79;
+}
+
+main {
+    width: min(100% - 32px, 900px);
+    margin: 0 auto;
+}
+
+.mood-section {
+    padding: 45px 0 30px;
+    text-align: center;
+}
+.mood-section h2 {
+    margin-bottom: 4px;
+    font-size: 1.7rem;
+}
+.section-description {
+    margin-top: 0;
+    color: var(--muted);
+}
+.mood-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin: 28px 0 0;
+    padding: 0;
+    border: 0;
+}
+.mood-card {
+    display: block;
+    position: relative;
+    padding: 22px 12px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.mood-card:hover {
+    transform: translateY(-4px);
+}
+.mood-card:focus-within {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+.mood-card input {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    accent-color: var(--accent);
+}
+.mood-card:has(input:checked) {
+    border-color: var(--accent);
+    background: #f0eaff;
+}
+.weather-icon {
+    display: block;
+    margin: 12px 0;
+    font-size: 2.6rem;
+}
+.mood-name,
+.mood-description {
+    display: block;
+}
+.mood-name {
+    font-weight: bold;
+    font-size: 1.05rem;
+}
+.mood-description {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.forecast-section {
+    --surface: #ffffff;
+    --text: #302b45;
+    --muted: #777188;
+    --accent: #8b76c9;
+    --border: #e9e2f5;
+    --shadow: 0 10px 30px rgba(77, 57, 112, 0.08);
+    color: var(--text);
+    margin: 20px 0;
+    padding: 32px 24px;
+    text-align: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    transition: background 0.3s ease;
+}
+.forecast-label {
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.forecast-icon {
+    margin: 10px 0;
+    font-size: 4rem;
+}
+.forecast-section h2 {
+    margin: 5px 0;
+    font-size: 1.8rem;
+}
+#forecast-message {
+    max-width: 540px;
+    margin: 12px auto;
+    color: var(--muted);
+}
+
+.activity-card {
+    max-width: 500px;
+    margin: 25px auto 0;
+    padding: 16px;
+    border-radius: 16px;
+    background: #f3efff;
+}
+.activity-card h3 {
+    margin: 0 0 5px;
+    font-size: 1rem;
+}
+.activity-card p {
+    margin: 0;
+}
+
+.feedback {
+    margin: 20px 0 0;
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.theme-section {
+    padding: 20px;
+    text-align: center;
+}
+.theme-control {
+    display: inline-block;
+    padding: 12px 18px;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    background: var(--surface);
+    cursor: pointer;
+}
+.theme-control input {
+    margin-right: 8px;
+    accent-color: var(--accent);
+}
+.theme-control:focus-within {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+.theme-hint {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+footer {
+    margin-top: 25px;
+    padding: 28px 16px;
+    text-align: center;
+    background: #ece6fa;
+    color: #5c5277;
+}
+footer p {
+    margin: 5px;
+}
+.footer-small {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+body.mood-sunny .forecast-section,
+body.mood-rainy .forecast-section,
+body.mood-cloudy .forecast-section,
+body.mood-stormy .forecast-section {
+    --text: #241f3a;
+    --muted: #241f3a;
+    --accent: #241f3a;
+    border-width: 2px;
+}
+
+body.mood-sunny .forecast-section {
+    background: linear-gradient(135deg, #ffe486, #ffd08a);
+    border-color: #f5c04a;
+}
+body.mood-rainy .forecast-section {
+    background: linear-gradient(135deg, #b8dbfb, #95c5f5);
+    border-color: #6fb0ee;
+}
+body.mood-cloudy .forecast-section {
+    background: linear-gradient(135deg, #d8dee6, #bfc9d4);
+    border-color: #a3b0be;
+}
+body.mood-stormy .forecast-section {
+    background: linear-gradient(135deg, #d0c6fb, #b5aef1);
+    border-color: #9a90e6;
+}
+
+body.night {
+    --background: #171827;
+    --surface: #25273b;
+    --text: #f0edff;
+    --muted: #c0bdd4;
+    --accent: #c1adff;
+    --border: #41425b;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+body.night .hero {
+    background: linear-gradient(135deg, #292442, #1d2b42, #35263f);
+}
+
+body.night .eyebrow,
+body.night .tagline,
+body.night .intro {
+    color: #d4c9f5;
+}
+
+body.night .mood-card:has(input:checked) {
+    background: #39324f;
+}
+
+body.night footer {
+    background: #222338;
+    color: #d4cfea;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (max-width: 650px) {
+    .hero {
+        padding: 45px 18px 35px;
+    }
+
+    .mood-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .mood-card {
+        padding: 18px 10px;
+    }
+
+    .forecast-section {
+        padding: 25px 16px;
+    }
+
+    .forecast-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .mood-grid {
+        grid-template-columns: 1fr;
+    }
+}
